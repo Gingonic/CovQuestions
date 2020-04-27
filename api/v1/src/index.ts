@@ -1,11 +1,11 @@
-import * as fs from 'fs-extra';
+import * as fs from "fs-extra";
 import {
   Questionnaire,
   QuestionnaireMeta,
   AnyQuestion,
-} from './models/Questionnaire.generated';
-import * as glob from 'fast-glob';
-import { validate } from './validate';
+} from "./models/Questionnaire.generated";
+import * as glob from "fast-glob";
+import { validate } from "./validate";
 import {
   loadTranslation,
   doOnEachTranslation,
@@ -13,7 +13,7 @@ import {
   getStringRessource,
   writeJSONFile,
   getDirectories,
-} from './utility';
+} from "./utility";
 class TranslationNotCompleteError extends Error {
   constructor(m: string) {
     super(m);
@@ -21,24 +21,24 @@ class TranslationNotCompleteError extends Error {
 }
 
 const API_PATHS = {
-  VIEWS_QUESTIONNAIRES: '/views/questionnaires',
+  VIEWS_QUESTIONNAIRES: "/views/questionnaires",
 };
 
 const SOURCE_PATHS = {
-  QUESTIONNAIRES: '/data/questionnaires',
+  QUESTIONNAIRES: "/data/questionnaires",
 };
 
 /**
  * Validates and generates the static API
  */
-export function main(pwd: string = './src', outputDir: string = './dist') {
-  console.log('Validating the Questionnaires...');
+export function main(pwd: string = "./src", outputDir: string = "./dist") {
+  console.log("Validating the Questionnaires...");
   glob.sync(`${pwd}/data/**/*.json`).forEach((q) => validate(q));
 
   let index: Questionnaire[] = [];
 
   // Build all Questionnaire
-  console.log('Building the static API:');
+  console.log("Building the static API:");
   let questionnaireDirs = getDirectories(
     `${pwd}${SOURCE_PATHS.QUESTIONNAIRES}`
   );
@@ -122,7 +122,7 @@ export function buildQuestionnaire(
    */
   questionnaireFilePaths.forEach((path) => {
     let questionnaire: Questionnaire = JSON.parse(
-      fs.readFileSync(path, 'utf-8')
+      fs.readFileSync(path, "utf-8")
     );
     // Test for same Ids
     if (questionnaire.id != questionnaireId) {

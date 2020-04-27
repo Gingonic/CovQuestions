@@ -40,15 +40,7 @@
       "type": "string"
     }
   },
-  "required": [
-    "id",
-    "schemaVersion",
-    "version",
-    "meta",
-    "questions",
-    "variables",
-    "resultCategories"
-  ],
+  "required": ["id", "schemaVersion", "version", "meta", "questions", "variables", "resultCategories"],
   "type": "object",
   "x-definitions": {
     "NumericOption": {
@@ -102,17 +94,11 @@
         },
         "type": {
           "description": "Type of the question.",
-          "enum": [
-            "number"
-          ],
+          "enum": ["number"],
           "type": "string"
         }
       },
-      "required": [
-        "id",
-        "text",
-        "type"
-      ],
+      "required": ["id", "text", "type"],
       "title": "Numeric question",
       "type": "object"
     },
@@ -133,10 +119,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "text",
-        "value"
-      ],
+      "required": ["text", "value"],
       "type": "object"
     },
     "Question": {
@@ -188,26 +171,18 @@
         "type": {
           "anyOf": [
             {
-              "enum": [
-                "select"
-              ],
+              "enum": ["select"],
               "type": "string"
             },
             {
-              "enum": [
-                "multiselect"
-              ],
+              "enum": ["multiselect"],
               "type": "string"
             }
           ],
           "description": "Type of the question."
         }
       },
-      "required": [
-        "id",
-        "text",
-        "type"
-      ],
+      "required": ["id", "text", "type"],
       "type": "object"
     },
     "QuestionWithoutOptions": {
@@ -236,22 +211,11 @@
         },
         "type": {
           "type": "string",
-          "enum": [
-            "boolean",
-            "date",
-            "text",
-            "multiselect",
-            "number",
-            "select"
-          ],
+          "enum": ["boolean", "date", "text", "multiselect", "number", "select"],
           "description": "Type of the question."
         }
       },
-      "required": [
-        "id",
-        "text",
-        "type"
-      ],
+      "required": ["id", "text", "type"],
       "type": "object"
     },
     "QuestionnaireMeta": {
@@ -291,12 +255,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "title",
-        "author",
-        "language",
-        "creationDate"
-      ],
+      "required": ["title", "author", "language", "creationDate"],
       "type": "object"
     },
     "Result": {
@@ -316,11 +275,7 @@
           "$ref": "#/x-definitions/LogicExpression"
         }
       },
-      "required": [
-        "id",
-        "text",
-        "value"
-      ],
+      "required": ["id", "text", "value"],
       "type": "object"
     },
     "ResultCategory": {
@@ -344,11 +299,7 @@
           "type": "array"
         }
       },
-      "required": [
-        "id",
-        "description",
-        "results"
-      ],
+      "required": ["id", "description", "results"],
       "type": "object"
     },
     "Variable": {
@@ -364,10 +315,7 @@
           "$ref": "#/x-definitions/LogicExpression"
         }
       },
-      "required": [
-        "id",
-        "value"
-      ]
+      "required": ["id", "value"]
     },
     "LogicAnd": {
       "additionalProperties": false,
@@ -379,9 +327,7 @@
           "type": "array"
         }
       },
-      "required": [
-        "and"
-      ],
+      "required": ["and"],
       "title": "LogicAnd",
       "type": "object"
     },
@@ -417,9 +363,7 @@
           "type": "array"
         }
       },
-      "required": [
-        "=="
-      ],
+      "required": ["=="],
       "title": "LogicEquals",
       "type": "object"
     },
@@ -456,9 +400,7 @@
           "type": "array"
         }
       },
-      "required": [
-        ">"
-      ],
+      "required": [">"],
       "title": "LogicGreater",
       "type": "object"
     },
@@ -481,9 +423,7 @@
           "type": "array"
         }
       },
-      "required": [
-        ">="
-      ],
+      "required": [">="],
       "title": "LogicGreaterEqual",
       "type": "object"
     },
@@ -509,9 +449,7 @@
           "type": "array"
         }
       },
-      "required": [
-        "if"
-      ],
+      "required": ["if"],
       "title": "LogicIf",
       "type": "object"
     },
@@ -537,9 +475,7 @@
           "type": "array"
         }
       },
-      "required": [
-        "in"
-      ],
+      "required": ["in"],
       "title": "LogicIn",
       "type": "object"
     },
@@ -562,9 +498,7 @@
           "type": "array"
         }
       },
-      "required": [
-        "<"
-      ],
+      "required": ["<"],
       "title": "LogicLess",
       "type": "object"
     },
@@ -587,9 +521,7 @@
           "type": "array"
         }
       },
-      "required": [
-        "<="
-      ],
+      "required": ["<="],
       "title": "LogicLessEqual",
       "type": "object"
     },
@@ -612,9 +544,7 @@
           "type": "array"
         }
       },
-      "required": [
-        "-"
-      ],
+      "required": ["-"],
       "title": "LogicMinus",
       "type": "object"
     },
@@ -635,9 +565,7 @@
           ]
         }
       },
-      "required": [
-        "!"
-      ],
+      "required": ["!"],
       "title": "LogicNot",
       "type": "object"
     },
@@ -697,9 +625,7 @@
           "type": "array"
         }
       },
-      "required": [
-        "or"
-      ],
+      "required": ["or"],
       "title": "LogicOr",
       "type": "object"
     },
@@ -722,9 +648,7 @@
           "type": "array"
         }
       },
-      "required": [
-        "+"
-      ],
+      "required": ["+"],
       "title": "LogicPlus",
       "type": "object"
     },
@@ -750,9 +674,7 @@
           "type": "array"
         }
       },
-      "required": [
-        "reduce"
-      ],
+      "required": ["reduce"],
       "title": "LogicReduce",
       "type": "object"
     },
@@ -775,9 +697,7 @@
           "type": "array"
         }
       },
-      "required": [
-        "some"
-      ],
+      "required": ["some"],
       "title": "LogicSome",
       "type": "object"
     },
@@ -788,9 +708,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "var"
-      ],
+      "required": ["var"],
       "type": "object"
     }
   }

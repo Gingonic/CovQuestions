@@ -8,7 +8,10 @@
 /**
  * Represents a single question of the questionnaire.
  */
-export type AnyQuestion = QuestionWithoutOptions | QuestionWithOptions | NumericQuestion;
+export type AnyQuestion =
+  | QuestionWithoutOptions
+  | QuestionWithOptions
+  | NumericQuestion;
 
 /**
  * The questionaire.
